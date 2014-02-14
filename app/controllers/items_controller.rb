@@ -6,6 +6,7 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
   end
+  
 
   def create
     Item.create (Item_params)
@@ -13,7 +14,8 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-
+    Item.find(params[:id]).destroy
+    redirect_to items_path
   end
 
   def edit

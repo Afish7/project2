@@ -6,4 +6,6 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-item = Item.create([{name: "Avacado", quantity: 2, price: 1.00, is_acquired: false, name: "Mac N Cheese", quantity: 1, price: 2.00, is_acquired: false, name: "Banana", quantity: 3, price: 1.00, is_acquired: false}])
+item = Item.create([{name: "Banana", quantity: 3, price: 1.00, is_acquired: false}])
+item = Item.create([{name: "Avacado", quantity: 2, price: 1.00, is_acquired: false}])
+item = Item.create([{name: "Mac N Cheese", quantity: 1, price: 2.00, is_acquired: false}])

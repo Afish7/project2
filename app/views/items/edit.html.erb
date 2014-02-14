@@ -1,2 +1,8 @@
-<h1>Items#edit</h1>
-<p>Find me in app/views/items/edit.html.erb</p>
+<%= form_for @items do |item| %>
+<%= item.name %>
+<%= item.text_field :name, value: @item.name, class: "form-control" %>
+<%= item.text_field :quantity, class: "form-control" %>
+<%= item.text_field :price, class: "form-control" %>
+<%= item.text_field :is_acquried, class: "form-control" %>
+<%= item.submit "Update!", class: "btn btn-success" %>
+<% end %>
