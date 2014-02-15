@@ -1,10 +1,7 @@
-
-<h1>Items#index</h1>
 <h1>My Shopping List</h1>
 
-<p>Find me in app/views/items/index.html.erb</p>
 
-<table id="art-car-table">
+<table id="item-table">
 		
 	<thead>
 		<tr>
@@ -22,6 +19,8 @@
 			<td><%= item.quantity %></td>
 			<td><%= item.price %></td>
 			<td><%= item.is_acquired %></td>
+			<td><%= link_to "Edit", edit_item_path(item), class: "btn btn-primary"  %>  </td>
+			<td> <%= link_to 'Delete', item, method: :delete, data: { confrim: 'Are you sure?' } %> </td>
 		</tr>
 
 	 
@@ -30,6 +29,11 @@
 <% end %>
 	
 </table>
+<%= link_to 'New Item', new_item_path, class: "btn btn-success" %>
+
+<br>
+<br>
+<br>
 
 
 

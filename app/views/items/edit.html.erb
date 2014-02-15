@@ -1,8 +1,24 @@
-<%= form_for @items do |item| %>
-<%= item.name %>
-<%= item.text_field :name, value: @item.name, class: "form-control" %>
-<%= item.text_field :quantity, class: "form-control" %>
-<%= item.text_field :price, class: "form-control" %>
-<%= item.text_field :is_acquried, class: "form-control" %>
-<%= item.submit "Update!", class: "btn btn-success" %>
+<%= form_for @item do |f| %>
+<%= @item.name %>
+<div>
+<%= f.label :name %>
+<%= f.text_field :name, class: "form-control" %>
+</div>
+
+<div>
+	<%= f.label :quantity %>
+	 <%= f.text_field :quantity, class: "form-control" %>
+	</div>
+
+<div>
+<%= f.label :price %>
+ <%= f.text_field :price, class: "form-control" %>
+</div>
+
+<div>
+<%= f.label :is_acquired?  %> 
+<%= f.check_box :is_acquired %>
+</div>
+
+<%= f.submit "Update!", class: "btn btn-success" %>
 <% end %>

@@ -9,8 +9,12 @@ class ItemsController < ApplicationController
   
 
   def create
-    Item.create (Item_params)
-    redirect_to new_item_path
+    @item = Item.new(item_params)
+    if @item.save
+      redirect_to items_path, notice: 'Item was successfully created!'
+    else
+      render action: 'new'
+    end
   end
 
   def destroy
@@ -23,9 +27,12 @@ class ItemsController < ApplicationController
   end
 
   def update
-    i = Item.find(params[:id])
-    i.update(item_params)
-    redirect_to items_path
+    @item = Item.find(params[:id])
+    if @item.update(item_params)
+    redirect_to items_path, notice: 'Item was successfully updated.'
+    else
+    render action: 'edit'
+    end
   end
 
 
@@ -34,8 +41,8 @@ class ItemsController < ApplicationController
 
   def item_params
     params.require(:item).permit(
-      :name, :image,
-      availabilites_attributes: [:name, :quantity, :price, :is_acquired, :id]
+      :name, :quantity, :price, :is_acquired
+      
     )
   end
 end

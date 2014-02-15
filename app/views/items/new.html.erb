@@ -1,2 +1,28 @@
-<h1>Items#new</h1>
-<p>Find me in app/views/items/new.html.erb</p>
+<h1>New Item</h1>
+
+<%= form_for (@item) do |f| %>
+		
+
+			<div class="field">
+				<%= f.label :name %><br>
+				<%= f.text_field :name %>
+			</div>
+			<div class="field">
+				<%= f.label :quantity %><br>
+				<%= f.number_field :quantity %>
+			</div>
+
+			<div class="field">
+				<%= f.label :price %><br>
+				<%= f.number_field :price %>
+
+			</div>
+
+			<div class="field">
+				<%= f.label "Acquired?" %><br>
+				<%= f.check_box :is_acquired %>
+			</div>
+			<div class="actions">
+				<%= f.submit %>
+			</div>
+			<% end %>
