@@ -20,7 +20,7 @@
 			<td><%= item.price %></td>
 			<td><%= item.is_acquired %></td>
 			<td><%= link_to "Edit", edit_item_path(item), class: "btn btn-primary"  %>  </td>
-			<td> <%= link_to 'Delete', item, method: :delete, data: { confrim: 'Are you sure?' } %> </td>
+			<td> <%= link_to 'Delete', item, {method: :delete,confirm: "Are you sure?" } %> </td>
 		</tr>
 
 	 

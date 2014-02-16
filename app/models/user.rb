@@ -4,15 +4,18 @@ class User
   field :email, type: String
   field :salt, type: String
   field :hashed_password, type: String
-  has_many :thelists
+  has_many :lists
 
-  validates :username, uniquness: true
+  attr_accessor :password
+
+
+  validates :email, uniqueness: true
   
   def authenticate?(password)
   	self.hashed_password == BCrypt::Engine.hash_secret(password, self.salt)
 	end
 
-before_save :hashed_password
+before_save :hash_word
 
 private
 	def hash_word

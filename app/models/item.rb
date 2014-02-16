@@ -6,7 +6,7 @@ class Item
   field :quantity, type: String
   field :price, type: Float
   field :is_acquired, type: Mongoid::Boolean
-  belongs_to :thelist
+  belongs_to :list
 
 
 validates :name, presence: true

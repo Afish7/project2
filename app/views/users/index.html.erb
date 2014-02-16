@@ -1,8 +1,14 @@
-<div class="container">
-<h1>Create a New User</h1>
-<%form_for @user do |f| %>
-<%= f.text_field :username, :placeholder => "Username", class: "form-control" %><br>
-<%= f.password_field :password, :placeholder =>"Password", class: "form-control" %><br>
-<%= f.submit "Create New User", class: "btn btn-success" %>
+Welcome, <%= current_user.email %>
+
+<% @users.each do |u| %>
+
+	<%= u.email %> 
+
+
 <% end %>
-</div>
+
+
+
+<%= link_to "Make New User", new_user_path, class: "btn btn-info" %>
+
+<%= link_to "Log out", auths_path+"/x", {class: "btn btn-info" , method: :delete} %>

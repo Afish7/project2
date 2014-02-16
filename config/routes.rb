@@ -1,9 +1,8 @@
 Shoppinglist::Application.routes.draw do
-
-  get "users/index"
   resources :items
   resources :users, only: [:index, :new, :create]
   resources :auths, only: [:new, :create, :destroy]
+  resources :lists
 
 delete "auths" => "auths#destroy"
 
